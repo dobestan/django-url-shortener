@@ -39,6 +39,7 @@ INSTALLED_APPS = (
 
     # Custom Generated Apps
     'links',
+    'API',
 )
 
 MIDDLEWARE_CLASSES = (
