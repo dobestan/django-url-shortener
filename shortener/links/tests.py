@@ -27,3 +27,15 @@ class LinkModelTest(TestCase):
         link_with_same_shorten = Link(original = "http://test.example.com", shorten = "test_shorten")
 
         self.assertRaises(IntegrityError, link_with_same_shorten.save)
+
+    def test_link_save_with_no_shorten_should_have_random_shorten(self):
+        link_save_with_no_shorten = Link(original = "http://test.example.com")
+        link_save_with_no_shorten.save()
+
+        self.assertNotEqual("", link_save_with_no_shorten.shorten)
+
+    # should have implemented
+    #   - shorten should not be blank ( ValidationError )
+    #   - original should not be blank ( ValidationError )
+    # having trouble with which module is responsible for this validation.
+    # Model or Manager?
