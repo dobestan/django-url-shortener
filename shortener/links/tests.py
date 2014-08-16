@@ -10,4 +10,11 @@ class LinkModelTest(TestCase):
         except AttributeError:
             self.fail("Link should have original field")
 
+    def test_link_should_have_shorten_url(self):
+        try:
+            link = Link()
+            link.shorten
+        except AttributeError:
+            self.fail("Link should have shorten field")
+
 
