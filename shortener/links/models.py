@@ -18,4 +18,9 @@ class Link(models.Model):
                 return shorten
 
     original = models.URLField()
-    shorten = models.CharField(max_length = 255, unique = True, default = init_shorten)
+    shorten = models.CharField(
+                max_length = 255,
+                unique = True,
+                blank = True,
+                default = init_shorten
+            )
