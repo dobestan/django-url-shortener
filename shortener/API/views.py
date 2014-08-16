@@ -1,3 +1,12 @@
-from django.shortcuts import render
+# REST Framework
+from rest_framework import generics
 
-# Create your views here.
+# Custom Model
+from links.models import Link
+
+# Custom Serializers
+from links.serializers import LinkSerializer
+
+class LinkList(generics.ListCreateAPIView):
+    queryset = Link.objects.all()
+    serializer_class = LinkSerializer
